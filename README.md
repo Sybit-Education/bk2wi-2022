@@ -3,7 +3,7 @@
 
 ## Development Requirements
 
-* [Node.js](https://nodejs.org/en/) v14 (LTS version): This has to be installed locally on development computer.
+* [Node.js](https://nodejs.org/en/) v18 (LTS version): This has to be installed locally on development computer.
 * Recommended IDE Setup
   * [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
   * install in VS Code: Git Extension Pack
