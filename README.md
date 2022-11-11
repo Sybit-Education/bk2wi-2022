@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7f5e8145-0bae-430e-9834-89ba7bab6025/deploy-status)](https://app.netlify.com/sites/regiosports/deploys)
+
 # bk2wi-2022: Sport Events
 
 
