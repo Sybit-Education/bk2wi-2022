@@ -1,7 +1,7 @@
 <template>
-  <div class="event-list">
+  <b-card-group deck>
     <event-card v-for="event in events" :key="event.id" :event="event" />
-  </div>  
+  </b-card-group>
 </template>
 
 <script>
@@ -17,15 +17,15 @@ export default {
     return {
       events: []
     }
-  },  
+  },
   mounted () {
     this.loadEvents()
   },
   methods: {
     async loadEvents () {
       this.events = await eventService.getList()
-    },    
-  }  
+    },
+  }
 }
 </script>
 
