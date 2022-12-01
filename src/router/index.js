@@ -14,6 +14,12 @@ const router = new VueRouter({
       component: HomeView
     },
     {
+      path: '/event/:eventId',
+      props: true,
+      name: 'event',
+      component: () => import('../views/EventDetailView.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

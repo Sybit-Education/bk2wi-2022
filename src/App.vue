@@ -12,14 +12,23 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import NavBar from './components/navigation/NavBar.vue'
 import FooterBar from './components/navigation/FooterBar.vue'
+import { useEventStore } from '@/stores/event'
+
+export default {
+  components: { NavBar, FooterBar },
+  setup() {
+    const store = useEventStore()
+    store.loadEvents()
+  }
+}
 </script>
 
 
 <style lang="scss">
-@import '@/assets/scss/custom-vars.scss';
+@import "@/assets/scss/custom-vars.scss";
 body {
   height: 100%;
 }
@@ -32,9 +41,11 @@ body {
   .content {
     margin-top: 30px;
     flex-grow: 1;
-    min-height: calc(100vh - 150px);
+    min-height: calc(100vh - 180px);
   }
-  .navbar, .content, footer {
+  .navbar,
+  .content,
+  footer {
     flex-shrink: 0;
   }
 }

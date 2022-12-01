@@ -33,6 +33,13 @@ const eventService = {
       )
     console.log('resultList', resultList)
     return resultList
+  },
+  getById (eventId) {
+    airtableBase(TABLE_NAME).find(eventId, function(err, record) {
+      if (err) { console.error(err); return; }
+      console.log('event', record.fields)
+      return record.fields;
+    });
   }
 }
 

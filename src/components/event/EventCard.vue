@@ -1,18 +1,25 @@
 <template>
-  <b-card class="my-3">
-    <h3>{{ event.Titel }}</h3>
-    <p>Datum: {{ event.Datum }}</p>
-  </b-card>
+  <router-link :to="eventLink()">
+    <b-card class="my-3 event-card">
+      <h3>{{ event.Titel }}</h3>
+      <p>{{ event.Austragungsort }}</p>
+    </b-card>
+  </router-link>
 </template>
 
 <script>
 export default {
-  name: 'EventCard',
+  name: "EventCard",
   props: {
     event: {
       type: Object,
-      required: true
+      required: true,
+    },
+  },
+  methods: {
+    eventLink() {
+      return "/event/" + this.event.id;
     }
   }
-}
+};
 </script>
