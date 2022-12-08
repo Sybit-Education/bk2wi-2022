@@ -23,3 +23,11 @@ export default {
   }
 };
 </script>
+
+<style> 
+.event-card
+{
+  color:#011584;
+}
+
+</style>
