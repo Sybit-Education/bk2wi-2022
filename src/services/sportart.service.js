@@ -1,9 +1,9 @@
 
 import airtableBase from './airtable.service'
-const TABLE_NAME = 'Event'
+const TABLE_NAME = 'Sportart'
 const ACTIVE_VIEW = 'public'
 
-const eventService = {
+const sportartService = {
 
   getList () {
     const resultList = []
@@ -43,4 +43,4 @@ const eventService = {
   }
 }
 
-export default eventService
+export default sportartService

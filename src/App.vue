@@ -16,12 +16,16 @@
 import NavBar from './components/navigation/NavBar.vue'
 import FooterBar from './components/navigation/FooterBar.vue'
 import { useEventStore } from '@/stores/event'
+import { useSportartStore } from '@/stores/sportart'
 
 export default {
   components: { NavBar, FooterBar },
   setup() {
-    const store = useEventStore()
-    store.loadEvents()
+    const storeEvents = useEventStore()
+    storeEvents.loadEvents()
+
+    const storeSportarten = useSportartStore()
+    storeSportarten.loadSportarts()
   }
 }
 </script>

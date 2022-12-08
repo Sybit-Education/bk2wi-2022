@@ -15,7 +15,6 @@ export const useEventStore = defineStore({
   actions: {
     loadEvents() {
       if (!this.eventList || this.eventList.length === 0) {
-        console.log("Load events ...")
         this.eventList = eventService.getList()
       }
     }

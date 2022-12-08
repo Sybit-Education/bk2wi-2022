@@ -1,6 +1,8 @@
 <template>
   <b-card-group deck>
-    <event-card v-for="event in eventList" :key="event.id" :event="event" />
+    <b-overlay :show="isLoading" rounded="sm">
+      <event-card v-for="event in eventList" :key="event.id" :event="event" />
+    </b-overlay>
   </b-card-group>
 </template>
 
@@ -14,8 +16,15 @@ export default {
   components: {
     EventCard
   },
-  mounted () {
+  data() {
+    return {
+      isLoading: true
+    }
+  },
+  mounted() {
+    this.isLoading = true
     this.loadEvents()
+    this.isLoading = false
   },
   computed: {
     ...mapState(useEventStore, ['eventList'])
