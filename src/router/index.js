@@ -20,6 +20,12 @@ const router = new VueRouter({
       component: () => import('../views/EventDetailView.vue')
     },
     {
+      path: '/sport/:sportartId',
+      props: true,
+      name: 'sportart',
+      component: () => import('../views/SportartView.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

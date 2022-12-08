@@ -9,7 +9,7 @@ export default {
   name: 'SportartLabel',
   props: {
     sportart: {
-      type: Array,
+      type: [String, Array],
       default() {
         return []
       }
@@ -17,8 +17,12 @@ export default {
   },
   computed: {
       item() {
-          const store = useSportartStore()
+        const store = useSportartStore()
+        if (Array.isArray(this.sportart)) {
           return store.getSportartById(this.sportart[0])
+        } else {
+          return store.getSportartById(this.sportart)
+        }
       }
   }
 }
