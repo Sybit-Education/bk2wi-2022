@@ -1,7 +1,7 @@
 <template>
   <b-container>
     Willkommen bei RegioSports: <sportart-label :sportart="sportartId" />
-    <event-list />
+    <event-list :sportart="sportartId" />
 
   </b-container>
 </template>

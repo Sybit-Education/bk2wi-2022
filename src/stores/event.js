@@ -10,7 +10,11 @@ export const useEventStore = defineStore({
     getEventById: (state) => {
       return (eventId) =>
         state.eventList.find((event) => event.id === eventId);
-    }
+    },
+    getEventsBysportart: (state) => {
+      return (sportartId) =>
+        state.eventList.find((event) => event.sportart.includes( sportartId));
+    },
   },
   actions: {
     loadEvents() {

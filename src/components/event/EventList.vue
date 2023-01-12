@@ -16,6 +16,14 @@ export default {
   components: {
     EventCard
   },
+  props: {
+    sportart: {
+      type: [String, Array],
+      default() {
+        return []
+      }
+    },
+  },
   data() {
     return {
       isLoading: true
@@ -23,16 +31,17 @@ export default {
   },
   mounted() {
     this.isLoading = true
-    this.loadEvents()
+     const store = useEventStore()
+    store.loadEvents()
+    this.eventList = store.getEventsBysportart(this.sportart)
     this.isLoading = false
   },
-  computed: {
-    ...mapState(useEventStore, ['eventList'])
-  },
+
   methods: {
     ...mapActions(useEventStore, ['loadEvents'])
   }
 }
+
 </script>
 
 <style>

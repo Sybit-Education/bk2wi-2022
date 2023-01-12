@@ -12,7 +12,7 @@ import EventList from "@/components/event/EventList.vue"
 import SportartList from "@/components/sportart/SportartList.vue"
 export default {
   name: "HomeView",
-  components: { EventList, SportartList }
+  components: {SportartList }
 }
 </script>
 
