@@ -1,14 +1,17 @@
 <template>
-  <b-card-group deck>
-    <b-overlay :show="isLoading" rounded="sm">
+  <b-overlay :show="isLoading" rounded="sm">
+    <b-card-group  v-if="hasEvents" deck>
       <event-card v-for="event in eventList" :key="event.id" :event="event" />
-    </b-overlay>
-  </b-card-group>
+    </b-card-group>
+    <div v-else>
+      Leider keine Termine gefunden.
+    </div>     
+  </b-overlay>
 </template>
 
 <script>
 import EventCard from './EventCard.vue'
-import { mapState, mapActions } from 'pinia'
+import { mapActions } from 'pinia'
 import { useEventStore } from '../../stores/event'
 
 export default {
@@ -17,7 +20,7 @@ export default {
     EventCard
   },
   props: {
-    sportart: {
+    sportartId: {
       type: [String, Array],
       default() {
         return []
@@ -26,17 +29,23 @@ export default {
   },
   data() {
     return {
+      eventList: [],
       isLoading: true
     }
   },
   mounted() {
     this.isLoading = true
-     const store = useEventStore()
+    const store = useEventStore()
     store.loadEvents()
-    this.eventList = store.getEventsBysportart(this.sportart)
+    this.eventList = store.getEventsBySportartId(this.sportartId)
+    console.log(this.eventList)
     this.isLoading = false
   },
-
+  computed: {
+    hasEvents () {
+      return this.eventList.length > 0
+    }
+  },
   methods: {
     ...mapActions(useEventStore, ['loadEvents'])
   }

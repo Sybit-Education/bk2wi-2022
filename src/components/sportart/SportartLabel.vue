@@ -8,7 +8,7 @@ import { useSportartStore } from '@/stores/sportart'
 export default {
   name: 'SportartLabel',
   props: {
-    sportart: {
+    sportartId: {
       type: [String, Array],
       default() {
         return []
@@ -19,9 +19,9 @@ export default {
       item() {
         const store = useSportartStore()
         if (Array.isArray(this.sportart)) {
-          return store.getSportartById(this.sportart[0])
+          return store.getSportartById(this.sportartId[0])
         } else {
-          return store.getSportartById(this.sportart)
+          return store.getSportartById(this.sportartId)
         }
       }
   }

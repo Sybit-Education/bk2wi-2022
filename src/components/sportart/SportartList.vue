@@ -1,9 +1,13 @@
 <template>
+  <b-overlay :show="isLoading" rounded="sm">
     <b-card-group deck>
-      <b-overlay :show="isLoading" rounded="sm">
-        <sportart-list-item v-for="sportart in sportartList" :key="sportart.id" :sportart="sportart" />
-      </b-overlay>
+      <sportart-list-item
+        v-for="sportart in sportartList"
+        :key="sportart.id"
+        :sportart="sportart"
+      />
     </b-card-group>
+  </b-overlay>
 </template>
 
 <script>
@@ -16,20 +20,20 @@ export default {
     name: 'SportartList',
     components: { SportartListItem },
     data() {
-        return {
+      return {
         isLoading: true
-        }
+      }
     },
     mounted() {
-        this.isLoading = true
-        this.loadSportarts()
-        this.isLoading = false
+      this.isLoading = true
+      this.loadSportarts()
+      this.isLoading = false
     },
     computed: {
         ...mapState(useSportartStore, ['sportartList'])
     },
     methods: {
-        ...mapActions(useSportartStore, ['loadSportarts'])
+      ...mapActions(useSportartStore, ['loadSportarts'])
     }
 }
 </script>

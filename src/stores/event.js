@@ -11,9 +11,9 @@ export const useEventStore = defineStore({
       return (eventId) =>
         state.eventList.find((event) => event.id === eventId);
     },
-    getEventsBysportart: (state) => {
+    getEventsBySportartId: (state) => {
       return (sportartId) =>
-        state.eventList.find((event) => event.sportart.includes( sportartId));
+        state.eventList.filter((event) => event.Sportart[0] === sportartId );
     },
   },
   actions: {

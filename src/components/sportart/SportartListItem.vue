@@ -1,6 +1,6 @@
 <template>
   <router-link :to="link()">
-    <div>{{ sportart.Name }}</div>
+    <b-card>{{ sportart.Name }}</b-card>
   </router-link>
 </template>
 
