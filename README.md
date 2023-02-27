@@ -2,7 +2,6 @@
 
 # bk2wi-2022: Sport Events
 
-
 ## Development Requirements
 
 * [Node.js](https://nodejs.org/en/) v18 (LTS version): This has to be installed locally on development computer.
